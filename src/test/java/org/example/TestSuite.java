@@ -7,7 +7,9 @@ public class TestSuite extends BaseTest {
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationSuccessPage  registrationSuccessPage = new RegistrationSuccessPage();
 
-    //Desktop page
+    //Computers page
+    ComputersPage computersPage = new ComputersPage();
+    DesktopPage desktopPage = new DesktopPage();
 
 
     @Test
@@ -24,6 +26,11 @@ public class TestSuite extends BaseTest {
     @Test
     public void verifyUserIsAbleToNavigateToTheDesktopPage(){
         homePage.clickOnComputersMenu();
-        //click on
+        //check user is on the computers page
+        computersPage.checkUserIsInTheComputersPage();
+        //click on desktops heading
+        computersPage.clickOnDesktopsHeading();
+        desktopPage.checkUserIsInTheDesktopPage();
+
     }
 }
