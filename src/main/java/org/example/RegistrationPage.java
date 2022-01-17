@@ -15,6 +15,8 @@ public class RegistrationPage extends Utils{
     static By _confirmPasswordField = By.id("ConfirmPassword");
     static By _clickOnRegisterButton = By.id("register-button");
 
+    LoadProp loadProp = new LoadProp();
+
     //Check if the user is in register page
     public  void checkUserIsInRegisterPage(){
         Assert.assertTrue(driver.getCurrentUrl().contains("register"));
@@ -24,9 +26,9 @@ public class RegistrationPage extends Utils{
         //Click on male radio button
         clickOnElement(_genderMaleRadioButton);
         //Enter first name
-        typeText(_firstNameField, "aaaa");
+        typeText(_firstNameField, loadProp.getProperty("FirstName"));
         //Enter last name
-        typeText(_lastNameField,"bbb");
+        typeText(_lastNameField,loadProp.getProperty("LastName"));
         //Select Day of birth
         Select selectDay = new Select(driver.findElement(By.name("DateOfBirthDay")));
         selectDay.selectByValue("5");
